@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="in">
+  <script>
+    function throttle(callback, time) {
+      // 开始时间
+      let startTime = 0;
+      // 定时器timer
+      let timer = null;
+      return function (...args) {
+        // 当前时间
+        let now = Date.now();
+        if (timer) clearTimeout(timer);
+        startTime = now;
+        timer = setTimeout(() => {
+          callback(...args);
+          timer = null;
+        }, time);
+      };
+    }
+    const inEle = document.querySelector('#in');
+    inEle.addEventListener('input', throttle(function (e) {
+      console.log('e.target.value ', e.target.value);
+    }, 1000))
+
+    let count = 0;
+    function fn() {
+      count++;
+      console.log('count: ', count);
+      return count
+    }
+    const fn1 = throttle(fn, 500);
+
+    fn1();
+    fn1();
+    fn1();
+    // console.log('fn1(): ', fn1());
+    // console.log('count: ', count);
+  </script>
+</body>
+
+</html>

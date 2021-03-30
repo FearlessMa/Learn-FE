@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // | 相同位有一个为1 就为1
+    // & 相同位都为1 就为1
+    // ^ 相同位两个值相反，就为1
+  </script>
+
+  <!-- <script>
+    // twoSum
+    var twoSum = function (nums, target) {
+      const len = nums.length;
+      const dataMap = new Map();
+      let arr = [];
+      console.log('arr: ', arr);
+      dataMap.set(nums[0], 0);
+      for (let i = 1; i < len; i++) {
+        const other = target - nums[i];
+        console.log('other: ', other);
+        if (dataMap.get(other) !== undefined) {
+          console.log('dataMap.get(other): ', dataMap.get(other));
+          arr = [dataMap.get(other), i];
+          console.log('arr: ', arr);
+          return [dataMap.get(other), i];
+        }
+        console.log('arr: ', arr);
+        dataMap.set(nums[i], i);
+      }
+      console.log('arr: ', arr);
+      return arr;
+    };
+    let res = twoSum([3, 3], 6)
+    console.log('res: ', res);
+  </script> -->
+  <!-- <script>
+    // 整数翻转
+    // var reverse = function (x) {
+    //   const max = Math.pow(2, 31) - 1;
+    //   const min = Math.pow(-2, 31);
+    //   if (x < min || x > max || x == 0) {
+    //     return 0;
+    //   }
+    //   // true 负数 false 正数
+    //   // let flag = (x + "").startsWith("-");
+    //   // 正数返回1 负数返回-1
+    //   let flag = Math.sign(x) < 0;
+    //   let str = Math.abs(x) + "";
+    //   str = str.replace(/0+&/g, "");
+    //   const reverseStr = str.split("").reverse().join("");
+    //   const res = flag ? 0 - reverseStr : reverseStr - 0;
+    //   if (res < min || res > max) {
+    //     return 0;
+    //   }
+    //   return res;
+    // };
+    var reverse = function (x) {
+      let res = 0;
+      while (x) {
+        res = res * 10 + x % 10;
+        // 按位或 变为整数
+        x = x / 10 | 0;
+      }
+      // res 按位或 转为二进制 ，与res比较时如果相等，没有益处
+      return (res | 0) === res ? res : 0;
+    };
+    console.log('reverse(123): ', reverse(123));
+    console.log('reverse(120): ', reverse(120));
+    console.log('reverse(-123): ', reverse(-123));
+    console.log('reverse(901000): ', reverse(901000));
+    console.log('reverse(1534236469): ', reverse(1534236469));
+  </script> -->
+
+  <!-- <script>
+    // 回文数字
+    // var isPalindrome = function (x) {
+    //   // 0
+    //   if (x >= 0 && x < 10) return true;
+    //   // 负数
+    //   if (Math.sign(x) < 0) return false;
+    //   const numArr = (x + "").split("");
+    //   const len = numArr.length;
+    //   // 比较数组两头数据 left ，right  
+    //   // 值相等 且 right - left == 1 || right == left 是回文数字
+    //   for (let i = 0; i < len; i++) {
+    //     const left = i;
+    //     const right = len - 1 - i;
+    //     if (numArr[left] !== numArr[right]) {
+    //       return false;
+    //     }
+    //     if (right - left == 1 || right == left) {
+    //       return true;
+    //     }
+    //   }
+    // };
+
+    var isPalindrome = function (x) {
+      // 0 -9
+      if (x >= 0 && x < 10) return true;
+      // 负数
+      if (Math.sign(x) < 0) return false;
+      if (!(x % 10)) return false;
+      let res = 0;
+      let x2 = x;
+      while (x2) {
+        res = res * 10 + (x2 % 10);
+        x2 = (x2 / 10) | 0;
+      }
+      return res === x;
+    };
+    console.log('isPalindrome(123): ', isPalindrome(123));
+    console.log('isPalindrome(121): ', isPalindrome(121));
+    console.log('isPalindrome(10): ', isPalindrome(10));
+    console.log('isPalindrome(9): ', isPalindrome(9));
+  </script> -->
+
+  <!-- <script>
+    // 最长公共前缀
+    var longestCommonPrefix = function (strs) {
+      if (!strs || !strs.length) {
+        return "";
+      }
+      if (strs.length === 1) {
+        return strs[0];
+      }
+      // let str = "";
+      let sign = "";
+      let word = strs[0];
+      let wordList = strs.slice(1);
+      for (let i = 0; i < word.length; i++) {
+        let char = word[i];
+        let flag = true;
+        wordList.forEach(item => {
+          // 不相同
+          if (item[i] != char) {
+            flag = false;
+          }
+        });
+        // 相同
+        if (flag) {
+          sign += char;
+        } else {
+          return sign;
+        }
+        //  else {
+        //   // 不同
+        //   if (sign.length > str.length) {
+        //     str = sign;
+        //   }
+        //   sign = "";
+        //   flag = true;
+        // }
+      }
+      return sign;
+    };
+  </script> -->
+
+  <!-- <script>
+    // 有效的括号 栈
+    // var isValid = function (s) {
+    //   if (s.length < 2) return false;
+    //   let stack = [s[0]];
+    //   let signMap = { "}": "{", ")": "(", "]": "[" };
+    //   for (let i = 1; i < s.length; i++) {
+    //     let sign = s[i];
+    //     // 注意 stack 为空时
+    //     let stackEndSign = stack[stack.length - 1];
+    //     // 栈尾 和 当前标志 为一对，且栈不为空
+    //     if (signMap[sign] == stackEndSign && stack.length) {
+    //       stack.pop();
+    //     } else {
+    //       stack.push(sign);
+    //     }
+    //   }
+    //   return !stack.length;
+    // };
+    var isValid = function (s) {
+      let len = s.length;
+      // 按位与 奇数与1 与 得1 ，偶数得0
+      if (len & 1) return false;
+      let stack = [];
+      let signMap = { "}": "{", ")": "(", "]": "[" };
+      for (let i = 0; i < len; i++) {
+        let sign = s[i];
+        if (signMap[sign]) {
+          if (stack.pop() != signMap[sign]) {
+            return false;
+          }
+        } else {
+          stack.push(sign);
+        }
+      }
+      return !stack.length;
+    };
+
+    console.log('isValid("()"): ', isValid("()"));
+    console.log('isValid("()[]{}"): ', isValid("()[]{}"));
+  </script> -->
+
+  <!-- <script>
+    // 合并两个有序链表
+    var mergeTwoLists = function (l1, l2) {
+      if (l1 == null) return l2;
+      if (l2 == null) return l1;
+      if (l1.val <= l2.val) {
+        let next = mergeTwoLists(l1.next, l2);
+        l1.next = next
+        return l1;
+      } else {
+        let next = mergeTwoLists(l1, l2.next);
+        l2.next = next
+        return l2;
+      }
+    };
+  </script> -->
+
+  <!-- <script>
+    // 删除数组中重复项
+    // var removeDuplicates = function (nums) {
+    //   if (nums.length < 2) return nums.length;
+    //   let map = {}
+    //   let i = 0;
+    //   let sign = 'key';
+    //   nums.push(sign)
+    //   while (nums[i] != sign) {
+    //     let num = nums.shift();
+    //     console.log('num: ', num);
+    //     if (num != sign && !map[num]) {
+    //       map[num] = num
+    //       nums.push(num)
+    //     }
+    //   }
+    //   nums.shift()
+    //   return nums.length
+    // };
+    var removeDuplicates = function (nums) {
+      if (nums.length < 2) return nums.length;
+      if (nums.length == 2) return nums[0] == nums[1] ? 1 : 2;
+      let writeIdx = 0;
+      // [1,1,2,3]
+      for (let i = 1; i < nums.length; i++) {
+        if (nums[i] != nums[i - 1]) {
+          nums[++writeIdx] = nums[i];
+        }
+      }
+      return writeIdx + 1;
+    };
+    console.log('removeDuplicates([1,1,2]): ', removeDuplicates([1, 1, 2]));
+
+  </script> -->
+
+  <!-- <script>
+    // 动态规划 322 最少零钱问题
+    // var coinChange = function (coins, amount) {
+    //   if (amount <= 0) return 0;
+    //   // 设置 长度为 amount +1 的数组 下标为对应的金额，值为对应金额使用最少的硬币数
+    //   // 初始化 0 为0 其他金额值为-1
+    //   // [0,-1,-1,-1,-1,-1,...]
+    //   const dp = new Array(amount + 1).fill(-1);
+    //   dp[0] = 0;
+
+    //   // 计算每个金额使用的最少硬币
+    //   // 如 coins = [1, 2, 5], amount = 11
+    //   for (let i = 1; i < amount + 1; i++) {
+    //     // 硬币与 amount 等额，最少硬币为1
+    //     if (coins.includes(i)) {
+    //       dp[i] = 1;
+    //     } else {
+    //       // 不等
+    //       let min = -1;
+    //       // 找到 种硬币最小的组合
+    //       for (let j = 0; j < coins.length; j++) {
+    //         let coin = coins[j]
+    //         if (i > coin) {
+    //           // 找到 剩余硬币 最小的组合
+    //           let res = i - coin;
+    //           // 排除 dp[res]  初始值
+    //           if (dp[res] !== -1) {
+    //             if (min === -1) {
+    //               min = dp[res] + 1;
+    //             } else {
+    //               // 如果比当前结果大 覆盖当前结果
+    //               min > dp[res] + 1 && (min = dp[res] + 1);
+    //             }
+    //           }
+    //         }
+    //       }
+    //       dp[i] = min;
+    //     }
+    //   }
+
+    //   console.log('dp: ', dp);
+    //   return dp[amount];
+    // };
+    var coinChange = function (coins, amount) {
+      if (amount <= 0) return 0;
+      // 设置 长度为 amount +1 的数组 下标为对应的金额，值为对应金额使用最少的硬币数
+      // 初始化 0 为0 其他金额值为-1
+      // [0,-1,-1,-1,-1,-1,...]
+      const dp = new Array(amount + 1).fill(Infinity);
+      dp[0] = 0;
+
+      // 计算每个金额使用的最少硬币
+      // 如 coins = [1, 2, 5], amount = 11
+      for (let i = 1; i < amount + 1; i++) {
+        // 硬币与 amount 等额，最少硬币为1
+        if (coins.includes(i)) {
+          dp[i] = 1;
+        } else {
+          let min = dp[i];
+          // 找到 种硬币最小的组合
+          for (let coin of coins) {
+            let res = i - coin;
+            if (res >= 0) min > dp[res] + 1 && (min = dp[res] + 1);
+          }
+          dp[i] = min;
+        }
+      }
+      console.log("dp: ", dp);
+      return dp[amount];
+    };
+    // console.log(' coinChange([1,2,5],11): ', coinChange([1, 2, 5], 11));
+    // console.log(' coinChange([1,2,5],4): ', coinChange([1, 2, 5], 4));
+    // console.log(' coinChange([1,2,5],5): ', coinChange([1, 2, 5], 5));
+    // console.log(' coinChange([1,2,5],6): ', coinChange([1, 2, 5], 6));
+    console.log(' coinChange([1,2,5],10): ', coinChange([1, 2, 5], 10));
+  </script> -->
+  <!-- <script>
+    //  70 爬楼梯 方式 : 动态规划
+    var climbStairs = function (n) {
+      const dp = [];
+      dp[0] = 1;
+      dp[1] = 1;
+      for (let i = 2; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+      }
+      return dp[n];
+    };
+    // console.log('climbStairs(3): ', climbStairs(4));
+    console.log('climbStairs(3): ', climbStairs(5));
+  </script> -->
+  <!-- <script>
+    //  120 三角形最短路径 动态规划
+    var minimumTotal = function (triangle) {
+      let startIdx = 0;
+      let idx = startIdx;
+      let row = triangle[0];
+      // 当前层 与 以前层的和 row 求最小值 新row
+      for (let i = 1; i < triangle.length; i++) {
+        let currentRow = triangle[i];
+        let cLen = currentRow.length;
+        // let currentIdxNum = currentRow[idx];
+        let addList = [];
+        for (let c = 0; c < cLen; c++) {
+          let min = Infinity;
+          if (row[c] != undefined) {
+            let rowC = row[c] + currentRow[c];
+            min = min > rowC ? rowC : min;
+          }
+          if (row[c - 1] != undefined) {
+            let rowPre = row[c - 1] + currentRow[c];
+            min = min > rowPre ? rowPre : min;
+          }
+          // if (row[c + 1]) {
+          //   let rowNext = row[c + 1] + currentRow[c];
+          //   min = min > rowNext ? rowNext : min;
+          // }
+          addList[c] = min;
+        }
+        row = addList;
+        console.log('row: ', row);
+      }
+      return Math.min(...row);
+    };
+
+    // console.log(' minimumTotal([[-1], [-2, -3]]): ', minimumTotal([[-1], [-2, -3]]));
+    // console.log(' minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]): ', minimumTotal([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]));
+    // console.log(' minimumTotal([[1],[-5,-2],[3,6,1],[-1,2,4,-3]])): ', minimumTotal([[1], [-5, -2], [3, 6, 1], [-1, 2, 4, -3]]));
+    console.log(' minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]])): ', minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]));
+  </script> -->
+
+  <!-- <script>
+    //  64 最小路径 动态规划
+    //  暴力递归解决 自顶而下
+    //  动态规划思路   自底而上 寻找规律 缓存结果 
+    var minPathSum = function (grid) {
+      let len = grid.length;
+      let m = grid.length;
+      let n = grid[0].length;
+      let arr = new Array(m).fill(0)
+      arr.forEach((item, i) => {
+        arr[i] = new Array(n).fill(Infinity)
+      })
+      // let arr = grid;
+      console.log('arr: ', arr);
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          let min = Infinity;
+          if (i - 1 >= 0 && j - 1 >= 0) {
+            min = Math.min(arr[i - 1][j], arr[i][j - 1])
+          } else if (i - 1 >= 0) {
+            min = arr[i - 1][j]
+          } else if (j - 1 >= 0) {
+            min = arr[i][j - 1]
+          } else {
+            min = 0;
+          }
+          arr[i][j] = min + grid[i][j]
+        }
+      }
+      return arr[m - 1][n - 1]
+    };
+    console.log('minPathSum([[1,3,1],[1,5,1],[4,2,1]]): ', minPathSum([[1, 3, 1], [1, 5, 1], [4, 2, 1]]));
+  </script> -->
+
+  <!-- <script>
+    // 343 整数拆分 
+    // 1. dp[i] = (i-j)*dp[j]
+    // 2. dp[i] = Math.max(1*dp[i-1],2*dp[i-2],3*dp[i-3])
+    var integerBreak = function (n) {
+      let dp = new Array(n + 1).fill(0);
+      dp[1] = 1;
+      for (let i = 2; i < dp.length; i++) {
+        let res = 0;
+        let j = i;
+        while (j > 0) {
+          let dpNum = dp[--j]
+          let r = dpNum * (i - j);
+          let r1 = (i - j) * j
+          res = Math.max(res, r, r1)
+          // console.log('res: ', res);
+          // r > res && (res = r);
+        }
+        dp[i] = res;
+        res = 0;
+      }
+      console.log("dp: ", dp);
+      return dp[n];
+    };
+    // console.log('integerBreak(2): ', integerBreak(2));
+    // console.log('integerBreak(3): ', integerBreak(3));
+    // console.log('integerBreak(4): ', integerBreak(4));
+    console.log('integerBreak(10): ', integerBreak(10));
+  </script> -->
+
+  <!-- <script>
+    //  279 完全平方数 动态规划
+    // 此方法超时
+    var numSquares = function (n) {
+      if ((n == 1)) return 1;
+      let dp = new Array(n + 1).fill(Infinity);
+      dp[0] = 0;
+      dp[1] = 1;
+      let len = dp.length;
+      //num % 1 === 0  为整数
+      // Math.sqrt(num) 平方根
+      for (let i = 2; i < len; i++) {
+        if (Math.sqrt(i) % 1 === 0) {
+          dp[i] = 1;
+          continue;
+        }
+        let j = i;
+        let min = Infinity;
+        while (j > 0) {
+          if (Math.sqrt(j) % 1 === 0) {
+            if (Math.sqrt(i - j) % 1 === 0) {
+              min = Math.min(min, 2);
+            }
+            min = Math.min(dp[i - j] + 1, min);
+          }
+          j--;
+        }
+        dp[i] = min;
+        min = Infinity;
+      }
+      console.log('dp: ', dp);
+      return dp[n];
+    };
+
+    // console.log('numSquares(1): ', numSquares(1));
+    // console.log('numSquares(2): ', numSquares(2));
+    // console.log('numSquares(3): ', numSquares(3));
+    // console.log('numSquares(4): ', numSquares(4));
+    // console.log('numSquares(5): ', numSquares(5));
+    // console.log('numSquares(12): ', numSquares(12));
+    // console.log('numSquares(13): ', numSquares(13));
+    console.log('numSquares(8609): ', numSquares(8609));
+  </script> -->
+
+  <!-- <script>
+    //  62 不同路径 ，动态规划
+    //  暴力递归解决 自顶而下
+    //  动态规划思路   自底而上 寻找规律 缓存结果 
+    //  arr[i][j] = arr[i - 1][j] + arr[i][j - 1];
+
+
+    // var uniquePaths = function (m, n) {
+    //   let arr = new Array(m + 1).fill(0);
+    //   arr.forEach((item, i) => {
+    //     arr[i] = new Array(n + 1).fill(0);
+    //   });
+    //   let max = (arr[1][1] = 1);
+    //   for (let i = 1; i <= m; i++) {
+    //     for (let j = 1; j <= n; j++) {
+    //       if (i == 1 && j == 1) continue;
+    //       arr[i][j] = arr[i - 1][j] + arr[i][j - 1];
+    //       max < arr[i][j] && (max = arr[i][j]);
+    //     }
+    //   }
+    //   // const list = arr.flat();
+    //   // console.log("list: ", list);
+    //   // return Math.max(...list);
+    //   return max
+    // };
+
+    var uniquePaths = function (m, n) {
+      let arr = new Array(m + 1).fill(0);
+      arr.forEach((item, i) => {
+        arr[i] = new Array(n + 1).fill(0);
+      });
+      arr[1][1] = 1;
+      let i = 1;
+      let j = 1;
+      while (i <= m && j <= n) {
+        if (i !== 1 || j !== 1) {
+          arr[i][j] = arr[i - 1][j] + arr[i][j - 1];
+        }
+        if (j == n) {
+          j = 0;
+          i++;
+        }
+        if (i == m && j == n) {
+          i++;
+          j++;
+        }
+        j < n && j++;
+      }
+      console.log("arr: ", arr);
+
+      return arr[m][n];
+    };
+
+    // console.log('uniquePaths(3,3): ', uniquePaths(3, 3));
+    // console.log('uniquePaths(3,7): ', uniquePaths(3, 7));
+    console.log('uniquePaths(2,1): ', uniquePaths(2, 1));
+  </script> -->
+
+  <!-- <script>
+    //  27 移除元素
+    var removeElement = function (nums, val) {
+      let idx = 0;
+      // if (nums[idx] == val) {
+      //   idx++;
+      // }
+      nums.forEach((item, i) => {
+        if (item == val && i == idx) {
+          idx++;
+        } else if (item == val && idx < i) {
+          nums[idx] = nums[idx] ^ nums[i];
+          nums[i] = nums[idx] ^ nums[i];
+          nums[idx] = nums[idx] ^ nums[i];
+          idx++;
+        }
+      });
+
+      while (idx-- > 0) {
+        nums.shift()
+      }
+      return nums.length
+    };
+    removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
+  </script> -->
+
+  <script>
+    // 28 
+    var strStr = function (haystack, needle) {
+      if (haystack == needle) return 0;
+      if (needle === "") return 0;
+      const len = haystack.length;
+      let idx = 0;
+      let start = needle[idx];
+      let startIdx = -1;
+      for (let i = 0; i < len; i++) {
+        // 匹配开头
+        if (haystack[i] == start) {
+          // 全部匹配
+          if (idx == needle.length - 1) {
+            return i - idx;
+          }
+          start = needle[++idx];
+        } else { //不匹配 复原
+          i = i - idx ;
+          idx = 0;
+          start = needle[idx];
+        }
+      }
+      return startIdx;
+    };
+
+    // console.log('strStr("mississippi", "issi"): ', strStr("mississippi", "issi"));
+    console.log('strStr("mississippi","issip"): ', strStr("mississippi","issip"));
+  </script>
+
+</body>
+<!-- <script>
+  //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
+  function repeatMax(str) {
+    const len = str.length;
+    console.log('len: ', len);
+    let i = 0;
+    let j = 1;
+    let repeat = 0;
+    while (i < len - 1) {
+      let char = str[i]
+      let charAtj = str[j]
+      if (charAtj === char) {
+        j++
+      } else {
+        repeat = j - i;
+        console.log('repeat: start:' + i + ',end:' + j, str.slice(i, j), repeat);
+        i = j++;
+      }
+    }
+    return repeat;
+  }
+  const str1 = 'aaabbcccdddddaaaaaddddeeeeccccccc'
+  console.log('repeatMax(str1): ', repeatMax(str1));
+</script> -->
+<!-- <script>
+  // 1[2[1[a][3[bc]]]] 转化 abcbcbcabcbcbc
+  // 规则  重复1次(重复2次 (a 拼接( 重复3次bc )))
+  function parseTemplate(templateStr) {
+    const len = templateStr.length;
+    // 存放重复倍数
+    const stack1 = [];
+    // 存放字符串
+    const stack2 = [];
+    let idx = 0;
+    // 匹配 1[
+    let regTagLeft = /^(\d*)\[/;
+    let regTagRight = /^(\d*\w*)\]/;
+    while (idx < len - 1) {
+      let str = templateStr.slice(idx);
+      console.log('str: ', str);
+      // 判断[之前的字符 进栈
+      if (regTagLeft.test(str)) {
+        let res = str.match(regTagLeft)
+        let num = +res[1] == 0 ? 1 : +res[1];
+        stack1.push(num)
+        stack2.push('')
+        idx += res[0].length;
+      } else if (regTagRight.test(str)) {
+        // 判断]之前的字符 出栈并按照规则累加
+        let res = str.match(regTagRight)
+        let num = stack1.pop();
+        let str1 = stack2.pop();
+        // 匹配字符以当前栈顶字符相加 在重复次数
+        stack2[stack2.length - 1] += (str1+res[1]).repeat(num);
+        idx += res[0].length;
+      }
+    }
+    console.log('stack1: ', stack1);
+    console.log('stack2: ', stack2);
+    return stack2[0].repeat(stack1[0]);
+  }
+  // parseTemplate("1[2[1[a][3[bc]]]]")
+  console.log('parseTemplate("3[2[a]2[b]]"): ', parseTemplate("3[2[a]2[b]]"));
+  console.log('parseTemplate("1[2[1[a][3[6bc]]]]"): ', parseTemplate("1[2[1[a][3[6bc]]]]"));
+
+</script> -->
+
+</html>

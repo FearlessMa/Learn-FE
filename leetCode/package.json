@@ -1,0 +1,33 @@
+{
+  "name": "leetCode-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "auto-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FearlessMa/leetCode-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FearlessMa/leetCode-js/issues"
+  },
+  "homepage": "https://github.com/FearlessMa/leetCode-js#readme",
+  "devDependencies": {
+    "@fearless-ma/auto-commit": "^1.38.7",
+    "commitizen": "^4.2.3",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.22.0",
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "standard-version": "^9.1.1",
+    "validate-commit-msg": "^2.14.0"
+  }
+}
