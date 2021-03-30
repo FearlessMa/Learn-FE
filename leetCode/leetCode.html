@@ -579,7 +579,7 @@
     removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
   </script> -->
 
-  <script>
+  <!-- <script>
     // 28 
     var strStr = function (haystack, needle) {
       if (haystack == needle) return 0;
@@ -607,8 +607,40 @@
 
     // console.log('strStr("mississippi", "issi"): ', strStr("mississippi", "issi"));
     console.log('strStr("mississippi","issip"): ', strStr("mississippi","issip"));
-  </script>
+  </script> -->
 
+
+  <script>
+    //  35 搜索位置插入
+    // var searchInsert = function (nums, target) {
+    //   // 边界条件 小于第一个 或大于最后一个
+    //   if (nums[0] > target) {
+    //     // nums.shift(target);
+    //     // return nums;
+    //     return 0;
+    //   }
+    //   if (nums[nums.length - 1] < target) {
+    //     // nums.push(target);
+    //     // return nums;
+    //     return nums.length;
+    //   }
+
+    //   for (let i = 0; i < nums.length; i++) {
+    //     if (nums[i] == target) return i;
+    //     if (nums[i] < target && nums[i + 1] > target) {
+    //       return i+1;
+    //     }
+    //   }
+    // };
+    var searchInsert = function (nums, target) {
+      for (let i = 0; i < nums.length; i++) {
+        if (target <= nums[i]) return i;
+      }
+      return nums.length;
+    };
+    console.log('searchInsert([1,3,5,6],2): ', searchInsert([1, 3, 5, 6], 2));
+
+  </script>
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
