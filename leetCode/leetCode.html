@@ -610,7 +610,7 @@
   </script> -->
 
 
-  <script>
+  <!-- <script>
     //  35 搜索位置插入
     // var searchInsert = function (nums, target) {
     //   // 边界条件 小于第一个 或大于最后一个
@@ -640,7 +640,125 @@
     };
     console.log('searchInsert([1,3,5,6],2): ', searchInsert([1, 3, 5, 6], 2));
 
+  </script> -->
+
+  <script>
+    //  53 最大子序列和
+
+    // 内存爆炸版
+    // var maxSubArray = function (nums) {
+    //   if (nums.length == 1) return nums[0];
+    //   let len = nums.length;
+    //   let dp = new Array(len)
+    //     .fill(-Infinity)
+    //     .map(item => new Array(len).fill(-Infinity));
+    //   // let idx = 0;
+    //   // Math.max(nums[idx], nums[idx] + nums[idx + 1]);
+    //   for (let i = 0; i < len; i++) {
+    //     for (let j = 0 + i; j < len; j++) {
+    //       if (j == i) {
+    //         dp[i][j] = nums[i]
+    //       } else {
+    //         dp[i][j] = nums[j] + dp[i][j - 1]
+    //       }
+    //     }
+    //   }
+    //   return Math.max(...dp.flat())
+    // };
+
+    // 性能极差版
+    // var maxSubArray = function (nums) {
+    //   if (nums.length == 1) return nums[0];
+    //   let len = nums.length;
+    //   let max = -Infinity;
+    //   let dp = new Array(len).fill(-Infinity)
+    //   for (let i = 0; i < len; i++) {
+    //     for (let j = 0 + i; j < len; j++) {
+    //       if (j == i) {
+    //         dp[j] = nums[i]
+    //       } else {
+    //         dp[j] = nums[j] + dp[j - 1]
+    //       }
+    //     }
+    //     let rowMax = Math.max(...dp)
+    //     if (rowMax > max) {
+    //       max = rowMax
+    //     }
+    //     dp.fill(-Infinity)
+    //   }
+    //   // console.log('dp: ', dp);
+    //   // console.log('dp.flat(): ', dp.flat());
+    //   // return Math.max(...dp.flat())
+    //   return max;
+    // };
+
+    // 性能很差版
+    // var maxSubArray = function (nums) {
+    //   if (nums.length == 1) return nums[0];
+    //   let len = nums.length;
+    //   let max = -Infinity;
+    //   let arr = []
+    //   for (let i = 0; i < len; i++) {
+    //     for (let j = 0 + i; j < len; j++) {
+    //       if (j == i) {
+    //         arr.push(nums[i])
+    //       } else {
+    //         next = nums[j] + arr[arr.length - 1];
+    //         arr.push(next)
+    //       }
+    //     }
+    //     let rowMax = Math.max(...arr)
+    //     max = rowMax > max ? rowMax : max;
+    //     arr = []
+    //   }
+    //   return max;
+    // };
+
+    //  性能优化版
+    // var maxSubArray = function (nums) {
+    //   if (nums.length == 1) return nums[0];
+    //   let len = nums.length;
+    //   let max = -Infinity;
+    //   let rowMax = -Infinity;
+    //   for (let i = 0; i < len; i++) {
+    //     for (let j = 0 + i; j < len; j++) {
+    //       if (j == i) {
+    //         rowMax = nums[i];
+    //         max = rowMax > max ? rowMax : max;
+    //       } else {
+    //         next = nums[j] + rowMax;
+    //         if (next > max) {
+    //           max = next;
+    //         }
+    //         rowMax = next;
+    //         // rowMax = next > rowMax ? next : rowMax;
+    //       }
+    //     }
+    //     // console.log("rowMax: ", rowMax);
+    //     // console.log('max: ', max);
+    //   }
+    //   return max;
+    // };
+
+    //  终极版
+    var maxSubArray = function (nums) {
+      if (nums.length == 1) return nums[0];
+      let len = nums.length;
+      let max = nums[0];
+      let next = nums[0];
+      for (let i = 1; i < len; i++) {
+        next = Math.max(nums[i], nums[i] + next);
+        next > max && (max = next);
+        // rowMax = next;
+        // console.log("rowMax: ", rowMax);
+        // console.log('max: ', max);
+      }
+      return max;
+    };
+    // [-2,1,-3,4,-1,2,1,-5,4]
+    console.log('maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]): ', maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
   </script>
+
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
