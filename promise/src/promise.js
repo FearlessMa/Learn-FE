@@ -15,9 +15,12 @@ export default function Promise(executor) {
     if (_this.promiseState !== 'pending') return;
     _this.promiseState = 'fulfilled';
     _this.promiseResult = data;
-    // 异步执行
-    _this.callbacks.forEach((item) => {
-      item.onResolved(data);
+    // 实现then方法的异步执行
+    setTimeout(() => {
+      // 异步执行
+      _this.callbacks.forEach((item) => {
+        item.onResolved(data);
+      });
     });
   }
   function reject(data) {
@@ -26,9 +29,12 @@ export default function Promise(executor) {
     _this.promiseState = 'rejected';
     _this.promiseResult = data;
 
-    // 异步执行
-    _this.callbacks.forEach((item) => {
-      item.onRejected(data);
+    // 实现then方法的异步执行
+    setTimeout(() => {
+      // 异步执行
+      _this.callbacks.forEach((item) => {
+        item.onRejected(data);
+      });
     });
   }
   try {
@@ -82,11 +88,17 @@ Promise.prototype.then = function (onResolved, onRejected) {
     }
     // 判断状态是否为完成
     if (this.promiseState === 'fulfilled') {
-      callback(onResolved);
+      // 实现then方法的异步执行
+      setTimeout(() => {
+        callback(onResolved);
+      });
     }
     // 失败状态
     if (this.promiseState === 'rejected') {
-      callback(onRejected);
+      // 实现then方法的异步执行
+      setTimeout(() => {
+        callback(onRejected);
+      });
     }
     // 异步执行
     if (this.promiseState === 'pending') {

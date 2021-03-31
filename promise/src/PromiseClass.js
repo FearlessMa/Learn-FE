@@ -4,9 +4,6 @@ export default class Promise {
     this.promiseResult = null;
     // 存储异步调用的 onResolved onRejected
     this.callbacks = [];
-    // 绑定this
-    // this._resolve = this._resolve.bind(this)
-    // this._reject = this._reject.bind(this)
     // 初始化调用  executor
     try {
       executor(this._resolve.bind(this), this._reject.bind(this));
@@ -74,10 +71,16 @@ export default class Promise {
       }
       // 同步 改变状态
       if (this.promiseState == 'fulfilled') {
-        callback(onResolved);
+        // 实现then方法的异步执行
+        setTimeout(() => {
+          callback(onResolved);
+        });
       }
       if (this.promiseState == 'rejected') {
-        callback(onRejected);
+        // 实现then方法的异步执行
+        setTimeout(() => {
+          callback(onRejected);
+        });
       }
 
       // 异步 改变状态

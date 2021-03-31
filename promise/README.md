@@ -9,3 +9,4 @@
 - [x] `Promise.reject` 实现
 - [x] `Promise.all` 实现
 - [x] `Promise.race` 实现
+- [x] class`Promise` 实现
