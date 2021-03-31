@@ -77,26 +77,26 @@ console.log('result: ', result);
 // );
 // console.log('p4: ', p4);
 
-// const promise1 = new Promise((resolve,reject)=>{
-//   setTimeout(()=>{
-//     // resolve('promise1')
-//     throw 'err'
-//   })
-// })
-// const promise2 = new Promise((resolve,reject)=>{
-//   setTimeout(()=>{
-//     // resolve('promise2')
-//     reject('promise2')
-//     // throw 'error'
-//   },500)
-// })
-// const promise3 = new Promise((resolve,reject)=>{
-//   setTimeout(()=>{
-//     resolve('promise3')
-//   })
-// })
+const promise1 = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise1')
+    // throw 'err'
+  },100)
+})
+const promise2 = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise2')
+    // reject('promise2')
+    // throw 'error'
+  },500)
+})
+const promise3 = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('promise3')
+  })
+})
 
 // const res = Promise.all([promise1,promise2,promise3])
-// console.log('res: ', res);
-// const res1 = Promise.race([promise1,promise2,promise3])
-// console.log('res1: ', res1);
+// console.log('res: Promise.all', res);
+const res1 = Promise.race([promise1,promise2,promise3])
+console.log('res1: ', res1);

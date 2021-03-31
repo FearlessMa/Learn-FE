@@ -98,8 +98,55 @@ export default class Promise {
     return this.then(undefined, onRejected);
   }
 
-  static resolve() {}
-  static reject() {}
-  static all() {}
-  static race() {}
+  static resolve(value) {
+    return new Promise((resolve, reject) => {
+      if (value instanceof Promise) {
+        value.then(
+          (v) => resolve(v),
+          (r) => reject(r)
+        );
+      } else {
+        resolve(value);
+      }
+    });
+  }
+  static reject(value) {
+    return new Promise((resolve, reject) => {
+      reject(value);
+    });
+  }
+  static all(promises) {
+    let result = [];
+    let idx = 0;
+    return new Promise((resolve, reject) => {
+      for (let i = 0; i < promises.length; i++) {
+        promises[i].then(
+          (v) => {
+            result[i] = v;
+            if (idx == promises.length - 1) {
+              resolve(result);
+            }
+            idx++;
+          },
+          (r) => {
+            reject(r);
+          }
+        );
+      }
+    });
+  }
+  static race(promises) {
+    return new Promise((resolve, reject) => {
+      for (let i = 0; i < promises.length; i++) {
+        promises[i].then(
+          (v) => {
+            resolve(v);
+          },
+          (r) => {
+            reject(r);
+          }
+        );
+      }
+    });
+  }
 }
