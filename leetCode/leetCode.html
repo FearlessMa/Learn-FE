@@ -642,7 +642,7 @@
 
   </script> -->
 
-  <script>
+  <!-- <script>
     //  53 最大子序列和
 
     // 内存爆炸版
@@ -757,6 +757,99 @@
     };
     // [-2,1,-3,4,-1,2,1,-5,4]
     console.log('maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]): ', maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+  </script> -->
+
+  <!-- <script>
+    //  58 最后一个单词长度
+
+    // api 解法
+    // var lengthOfLastWord = function (s) {
+    //   s = s.trim();
+    //   if (!s) return 0;
+    //   const word = s.slice(s.lastIndexOf(" ") + 1);
+    //   return word.length;
+    // };
+
+    var lengthOfLastWord = function (s) {
+      let end = s.length - 1;
+      while (end > 0 && s.charAt(end) == " ") end--;
+      if (end < 0) return 0;
+      let start = end;
+      while (start >= 0 && s.charAt(start) != " ") start--;
+      return end - start;
+    };
+
+
+  </script> -->
+  <!-- <script>
+    //  66 加一
+    var plusOne = function (digits) {
+      let arr = [];
+      // 为true 加一
+      let sign = true;
+      for (let i = digits.length - 1; i >= 0; i--) {
+        let num = digits[i];
+        if (sign) {
+          num++;
+          sign = false;
+          if (num > 9) {
+            num = 0;
+            sign = true;
+          }
+        }
+        arr.unshift(num);
+        if (i == 0 && num == 0) {
+          arr.unshift(1)
+        }
+      }
+      return arr;
+    };
+    console.log('plusOne([9]): ', plusOne([9]));
+  </script> -->
+
+  <script>
+    // 67 二进制求和
+    var addBinary = function (a, b) {
+      let lenA = a.length - 1;
+      let lenB = b.length - 1;
+      let add = "";
+      // 是否有进制
+      let sign = false;
+      while (lenA >= 0 || lenB >= 0) {
+        let lastA = a[lenA] == undefined ? "0" : a[lenA];
+        let lastB = b[lenB] == undefined ? "0" : b[lenB];
+        let sum = lastA + lastB;
+        sum = sum == "10" ? "01" : sum;
+        if (sum == "11") {
+          if (sign) {
+            sum = "1";
+          } else {
+            sum = "0";
+            sign = true;
+          }
+        } else {
+          if (sign) {
+            sum = (sum % 2) + 1;
+            sign = sum == 2;
+            sum = sum % 2;
+          } else {
+            sum = sum % 2;
+          }
+        }
+        add += sum;
+        if (sign && lenA <= 0 && lenB <= 0) {
+          add += 1;
+        }
+        lenB--;
+        lenA--;
+      }
+
+      console.log('add: ', add);
+      return add.split('').reverse().join('');
+    };
+
+    console.log('addBinary("11","1"): ', addBinary("11", "1"));
+    // console.log('addBinary("1","0"): ', addBinary("1", "0"));
   </script>
 
 </body>
