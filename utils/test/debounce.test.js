@@ -1,4 +1,4 @@
-const { default: debounce } = require('../src/core/debounce');
+const { default: debounce } = require('../src/function/debounce');
 
 let count = 0;
 function fn() {

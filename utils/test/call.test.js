@@ -1,4 +1,4 @@
-import call from "../src/core/call";
+import call from "../src/function/call";
 
 function add(a, b) {
   return a + b + this.c;

@@ -1,4 +1,4 @@
-const { default: throttle } = require('../src/core/throttle');
+const { default: throttle } = require('../src/function/throttle');
 
 let count = 0;
 function fn() {

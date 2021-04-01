@@ -1,4 +1,4 @@
-import apply from "../src/core/apply";
+import apply from "../src/function/apply";
 
 function add(a, b) {
   return a + b + this.c;
