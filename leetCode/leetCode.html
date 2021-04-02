@@ -807,7 +807,7 @@
     console.log('plusOne([9]): ', plusOne([9]));
   </script> -->
 
-  <script>
+  <!-- <script>
     // 67 二进制求和
     var addBinary = function (a, b) {
       let lenA = a.length - 1;
@@ -869,8 +869,41 @@
 
     console.log('addBinary("11","1"): ', addBinary("11", "1"));
     // console.log('addBinary("1","0"): ', addBinary("1", "0"));
-  </script>
+  </script> -->
 
+  <script>
+    //  69 平方根
+    var mySqrt = function (x) {
+      if (x < 2) return x;
+      let n = x >> 1;
+      let left = 1;
+      let right = n + 1;
+      while (left + 1 < right) {
+        let mid = (left + right) >> 1;
+        if (mid * mid == x) return mid;
+        if (mid * mid < x) {
+          left = mid;
+        } else {
+          right = mid;
+        }
+      }
+
+      console.log('left: ', left);
+      console.log('right: ', right);
+      return left;
+      // let i = 0;
+      // while (i <= n) {
+      //   if (i * i == x) return i;
+      //   if (i * i < x && (i + 1) * (i + 1) > x) return i;
+      //   i++;
+      // }
+    };
+
+    console.log('mySqrt(3): ', mySqrt(3));
+    console.log('mySqrt(4): ', mySqrt(4));
+    console.log('mySqrt(8): ', mySqrt(8));
+    console.log('mySqrt(11): ', mySqrt(11));
+  </script>
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
