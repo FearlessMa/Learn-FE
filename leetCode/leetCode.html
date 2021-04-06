@@ -871,7 +871,7 @@
     // console.log('addBinary("1","0"): ', addBinary("1", "0"));
   </script> -->
 
-  <script>
+  <!-- <script>
     //  69 平方根
     var mySqrt = function (x) {
       if (x < 2) return x;
@@ -903,7 +903,94 @@
     console.log('mySqrt(4): ', mySqrt(4));
     console.log('mySqrt(8): ', mySqrt(8));
     console.log('mySqrt(11): ', mySqrt(11));
+  </script> -->
+
+  <!-- <script>
+    //  83 删除链表重复项
+    // @lc code=start
+    /**
+     * Definition for singly-linked list.
+     * function ListNode(val, next) {
+     *     this.val = (val===undefined ? 0 : val)
+     *     this.next = (next===undefined ? null : next)
+     * }
+     */
+    var deleteDuplicates = function (head) {
+      let diffNode = head;
+      let currentNode = head;
+      while (currentNode) {
+        if (currentNode.next && currentNode.val == currentNode.next.val) {
+          currentNode = currentNode.next;
+        } else {
+          diffNode.next = currentNode.next;
+          currentNode = diffNode = currentNode.next;
+        }
+      }
+      return head;
+    };
+    let node3 = { val: 2, next: null }
+    let node2 = { val: 1, next: node3 }
+    let node1 = { val: 1, next: node2 }
+
+    // deleteDuplicates(node1)
+    console.log('deleteDuplicates(node1): ', deleteDuplicates(node1));
+  </script> -->
+
+  <!-- <script>
+    // 88 合并有序数组
+
+    var merge = function (nums1, m, nums2, n) {
+      while (n > 0) {
+        nums1[m + n - 1] = (nums1[m - 1] > nums2[n - 1]) ? nums1[--m] : nums2[--n];
+      }
+      return nums1;
+    };
+
+    // merge([1,2,3,0,0,0],3,[2,5,6],3)
+    // console.log('merge: ', merge([0], 0, [1], 1));
+    console.log('merge([1,2,3,0,0,0],3,[2,5,6],3): ', merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
+    // console.log('merge: ', merge([4, 5, 6, 0, 0, 0], 3, [1, 2, 3], 3));
+    // console.log('merge: ', merge([4, 0, 0, 0, 0, 0], 1, [1, 2, 3, 5, 6], 5));
+  </script> -->
+
+
+  <script>
+    //  100 相同的tree
+    // 递归解题
+    // var isSameTree = function (p, q) {
+    //   if (p == q) {
+    //     return true;
+    //   }
+    //   if (q == null || p == null) return false;
+    //   if (p.val != q.val) {
+    //     return false;
+    //   } else {
+    //     let lRes = isSameTree(p.left, q.left);
+    //     let rRes = isSameTree(p.right, q.right);
+    //     if (!lRes || !rRes) {
+    //       return false;
+    //     }
+    //     return true;
+    //   }
+    // };
+
+    //  列队
+    var isSameTree = function (p, q) {
+      const queue = [{ p, q }];
+      while (queue.length) {
+        const cur = queue.shift();
+        if (cur.p == null && cur.q == null) continue;
+        if (cur.p == null || cur.q == null) return false;
+        if (cur.p.val != cur.q.val) return false;
+        queue.push(
+          { p: cur.p.left, q: cur.q.left },
+          { p: cur.p.right, q: cur.q.right }
+        );
+      }
+      return true;
+    };
   </script>
+
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
