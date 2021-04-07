@@ -4,7 +4,7 @@ import vnode from './vnode';
 import patchVnode from './patchVnode';
 // 更新vnode上树
 export default function patch(oldVnode, newVnode) {
-  //  如果 oldVnode 不是vnode节点 ，变为vnode节点
+  //  如果 oldVnode 是元素节点 不是vnode节点 ，变为vnode节点
   if (oldVnode.sel === undefined && oldVnode.elm === undefined) {
     let element = oldVnode;
     oldVnode = vnode(

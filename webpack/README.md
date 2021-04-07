@@ -60,7 +60,7 @@ externals: {
     jquery: 'jQuery'
   }
 ```
-* dll 第三放库 单独打包，使用DllPlugin抽离，使用DllReferencePlugin与AddAssetHtmlWebpackPlugin自动引入
+* dll 第三放库 单独打包，使用DllPlugin抽离，使用DllReferencePlugin与 AddAssetHtmlWebpackPlugin 自动引入
 ```js
 // webpack.dll.js
 // 打包生成一个 manifest.json --> 提供和jquery映射
@@ -111,3 +111,22 @@ import(/* webpackChunkName:a , webpackPrefetch:true*/'a.js').then((module)=>{
 ```
 * tree shaking 删除未使用的引用，注意版本差异，是否需要设置 sideEffect属性来排除tree shaking 目标。如 css less @babel/polyfill
 * pwa 离线存储，使用workbox-webpack-plugin插件
+
+```js
+// 将当前模块的记录其他模块的hash单独打包为一个文件 runtime
+    // 解决：修改a文件导致b文件的contenthash变化
+    runtimeChunk: {
+      name: entrypoint => `runtime-${entrypoint.name}`
+    },
+    minimizer: [
+      // 配置生产环境的压缩方案：js和css
+      new TerserWebpackPlugin({
+        // 开启缓存
+        cache: true,
+        // 开启多进程打包
+        parallel: true,
+        // 启动source-map
+        sourceMap: true
+      })
+    ]
+```

@@ -1,4 +1,4 @@
-# 1.0.0 (2021-04-06)
+# 1.0.0 (2021-04-07)
 
 
 ### Features
@@ -11,6 +11,7 @@
 * leetCode 69 二分法 ([a528464](https://github.com/FearlessMa/Learn-FE/commit/a5284645489efba679217888c07782317970f0a6))
 * promise then的回调函数异步执行实现 ([e047d3b](https://github.com/FearlessMa/Learn-FE/commit/e047d3b49ee77a8595685276e8499267c4d8b464))
 * utils 增加array方法 ([c0f8095](https://github.com/FearlessMa/Learn-FE/commit/c0f8095a2d0020d99ab519eb9847d7de3af71f28))
+* webpack 性能优化 ([cc68527](https://github.com/FearlessMa/Learn-FE/commit/cc685276077f9553a18974905e83a9a93015fe71))
 * 增加新内容 ([f9d660e](https://github.com/FearlessMa/Learn-FE/commit/f9d660e89cabd2d4a89de6299e1af24487f72eaf))
 * 完成promise class版本 ([cfea072](https://github.com/FearlessMa/Learn-FE/commit/cfea072c848ca03821a12223f7263554caba1f97))
 * 整合 ([0e265b6](https://github.com/FearlessMa/Learn-FE/commit/0e265b610d80d2c8d503d5d8dcb08441e0559f5b))
