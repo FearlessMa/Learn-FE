@@ -954,7 +954,7 @@
   </script> -->
 
 
-  <script>
+  <!-- <script>
     //  100 相同的tree
     // 递归解题
     // var isSameTree = function (p, q) {
@@ -989,8 +989,38 @@
       }
       return true;
     };
-  </script>
+  </script> -->
 
+  <script>
+    // 104 相同tree
+    // 递归
+    // var maxDepth = function (root) {
+    //   function maxDepth(root) {
+    //     if (!root) return 0;
+    //     let left = maxDepth(root.left);
+    //     let right = maxDepth(root.right);
+    //     return Math.max(left, right) + 1;
+    //   }
+    //   return maxDepth(root);
+    // };
+
+    // 列队
+    var maxDepth = function (root) {
+      if (root == null) return 0;
+      let queue = [root];
+      let depth = 1;
+      while (queue.length) {
+        const len = queue.length;
+        for (let i = 0; i < len; i++) {
+          const cur = queue.shift();
+          if (cur.left) queue.push(cur.left);
+          if (cur.right) queue.push(cur.right);
+        }
+        if (queue.length) depth++;
+      }
+      return depth;
+    };
+  </script>
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符

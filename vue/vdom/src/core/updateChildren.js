@@ -144,6 +144,7 @@ export default function updateChildren(parentElm, oldCh, newCh) {
   // new e a b c d
   if (newStartIdx <= newEndIdx) {
     console.log('oldChildren遍历完，newChildren有剩余就是要增加的 : ');
+    // 可用文档判断优化性能
     for (let i = newStartIdx; i <= newEndIdx; i++) {
       if (newCh[i] !== undefined && parentElm) {
         // newEndIdx 指向最尾端 时为 null ，就是在末尾追加

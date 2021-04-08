@@ -24,6 +24,7 @@ export default function patchVnode(oldVnode, newVnode) {
       // 旧节点挂在 新节点children
       children.forEach((ch) => {
         const elCh = createElement(ch);
+        // 可以使用文档片段挂载 优化性能
         ele.appendChild(elCh);
       });
     } else {
