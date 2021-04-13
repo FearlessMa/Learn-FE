@@ -4,6 +4,7 @@
 ### Features
 
 * class 版本promise ([13c3c00](https://github.com/FearlessMa/Learn-FE/commit/13c3c00edfeb8636e61a1b46482e2ac6b62f20ed))
+* leetCode ([2a71de4](https://github.com/FearlessMa/Learn-FE/commit/2a71de45a902ebe1c83efe2777dc441828d442b9))
 * leetCode ([90b58f0](https://github.com/FearlessMa/Learn-FE/commit/90b58f0d53a478ed782f63cd619106bca9239f43))
 * leetCode 	104 ([2a3f309](https://github.com/FearlessMa/Learn-FE/commit/2a3f309fcf490ae40d129c2f4b833a6763462da6))
 * leetCode 35 搜索位置插入 ([b1456c9](https://github.com/FearlessMa/Learn-FE/commit/b1456c959c066795f261bda7f80830046db9ae7b))

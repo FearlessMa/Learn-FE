@@ -1,6 +1,17 @@
 const { default: observe } = require('./core/observe');
 const { default: Watcher } = require('./core/Watcher');
 const { default: Vue } = require('./vue');
+import './css/index.less';
+// import add from './b';
+
+import(/* webpackChunkName:'b' */ './b.js').then((add) => {
+  console.log('add: ', add);
+  console.log('add', add.default(1, 2));
+});
+
+import(/* webpackChunkName:'jquery' */ './c').then(({ querySelect }) => {
+  console.log(querySelect('#app'));
+});
 
 // const obj = {
 //   a: { m: { n: 1 } },
@@ -27,8 +38,8 @@ const vm = new Vue({
   data() {
     return {
       name: 'test',
-      a:{
-        m:{
+      a: {
+        m: {
           value: 1
         }
       }
