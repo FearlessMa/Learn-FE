@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
     "@fearless-ma/auto-commit": "^1.38.10",
     "commitizen": "^4.2.3",
     "conventional-changelog-cli": "^2.1.1",

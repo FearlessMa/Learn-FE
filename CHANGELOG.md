@@ -1,4 +1,4 @@
-# 1.0.0 (2021-04-08)
+# 1.0.0 (2021-04-13)
 
 
 ### Features
@@ -16,6 +16,7 @@
 * 增加新内容 ([f9d660e](https://github.com/FearlessMa/Learn-FE/commit/f9d660e89cabd2d4a89de6299e1af24487f72eaf))
 * 完成promise class版本 ([cfea072](https://github.com/FearlessMa/Learn-FE/commit/cfea072c848ca03821a12223f7263554caba1f97))
 * 整合 ([0e265b6](https://github.com/FearlessMa/Learn-FE/commit/0e265b610d80d2c8d503d5d8dcb08441e0559f5b))
+* 更新指令 ([35180fc](https://github.com/FearlessMa/Learn-FE/commit/35180fc26191bd97710ad00a10204d8b42e1776a))
 
 
 

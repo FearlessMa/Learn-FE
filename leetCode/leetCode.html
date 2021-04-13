@@ -42,7 +42,7 @@
     console.log('res: ', res);
   </script> -->
   <!-- <script>
-    // 整数翻转
+    // 7 整数翻转
     // var reverse = function (x) {
     //   const max = Math.pow(2, 31) - 1;
     //   const min = Math.pow(-2, 31);
@@ -69,7 +69,7 @@
         // 按位或 变为整数
         x = x / 10 | 0;
       }
-      // res 按位或 转为二进制 ，与res比较时如果相等，没有益处
+      // res 按位或 转为二进制 ，与res比较时如果相等，没有溢出
       return (res | 0) === res ? res : 0;
     };
     console.log('reverse(123): ', reverse(123));
@@ -123,7 +123,7 @@
   </script> -->
 
   <!-- <script>
-    // 最长公共前缀
+    // 14 最长公共前缀
     var longestCommonPrefix = function (strs) {
       if (!strs || !strs.length) {
         return "";
@@ -991,7 +991,7 @@
     };
   </script> -->
 
-  <script>
+  <!-- <script>
     // 104 相同tree
     // 递归
     // var maxDepth = function (root) {
@@ -1020,6 +1020,99 @@
       }
       return depth;
     };
+  </script> -->
+
+  <!-- <script>
+    //  2 链表相加
+    //  链表相加 递归
+    // var addTwoNumbers = function (l1, l2) {
+    //   // const newNode = null;
+    //   function listAdd(node1, node2, node, num = 0) {
+    //     if (!node1 && !node2 && !num) return node;
+    //     let val1 = node1 ? node1.val : 0;
+    //     let val2 = node2 ? node2.val : 0;
+    //     let val = val1 + val2 + num;
+    //     // 进位
+    //     num = val > 9 ? 1 : 0;
+    //     val = val > 9 ? val % 10 : val;
+    //     node.val = val;
+    //     node.next = null;
+    //     let next1 = node1 ? node1.next : null;
+    //     let next2 = node2 ? node2.next : null;
+    //     if (next2 || next1 || num) {
+    //       node.next = {};
+    //       listAdd(next1, next2, node.next, num);
+    //     }
+    //     return node;
+    //   }
+
+    //   const node = { val: undefined, next: {} };
+    //   const newNode = listAdd(l1, l2, node);
+    //   console.log("newNode: ", newNode);
+    //   return newNode;
+    // };
+
+    //  链表相加 循环
+    var addTwoNumbers = function (l1, l2) {
+      let header = new ListNode(0);
+      let next = header;
+      let one = 0;
+      while (l1 || l2 || one) {
+        let val1 = l1 ? l1.val : 0;
+        let val2 = l2 ? l2.val : 0;
+        val = val1 + val2 + one;
+        one = val > 9 ? 1 : 0;
+        next.next = new ListNode(val % 10);
+        next = next.next;
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+      }
+      return header.next;
+    };
+  </script> -->
+
+  <script>
+    //  3. 最长无重复子字符串
+    // var lengthOfLongestSubstring = function (s) {
+    //   if (!s.trim()) return s.length;
+    //   let startIdx = 0;
+    //   let substr = s[0];
+    //   let subMax = 1;
+    //   let i = 1;
+    //   while (i < s.length) {
+    //     if (substr.indexOf(s[i]) == -1) {
+    //       substr += s[i]
+    //     } else {
+    //       substr = ''
+    //       i = ++startIdx;
+    //       i--;
+    //     }
+    //     i++
+    //     let len = substr.length;
+    //     subMax = len > subMax ? len : subMax;
+    //   }
+    //   return subMax;
+    // };
+
+    var lengthOfLongestSubstring = function (s) {
+      let arr = [],
+        max = 0;
+      for (let i = 0; i < s.length; i++) {
+        let cur = s[i];
+        let index = arr.indexOf(cur);
+        if (index != -1) {
+          arr.splice(0, index + 1);
+        }
+        arr.push(cur);
+        max = Math.max(arr.length, max);
+      }
+      return max;
+    };
+    console.log('lengthOfLongestSubstring("abcabcbb"): ', lengthOfLongestSubstring("abcabcbb"));
+    // console.log('lengthOfLongestSubstring:pwwkew ', lengthOfLongestSubstring('pwwkew'));
+    // console.log('lengthOfLongestSubstring: " "', lengthOfLongestSubstring(" "));
+    // console.log('lengthOfLongestSubstring: au', lengthOfLongestSubstring('au'));
+    // console.log('lengthOfLongestSubstring:aab ', lengthOfLongestSubstring('aab'));
   </script>
 </body>
 <!-- <script>
