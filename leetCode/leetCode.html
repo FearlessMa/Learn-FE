@@ -1071,7 +1071,7 @@
     };
   </script> -->
 
-  <script>
+  <!-- <script>
     //  3. 最长无重复子字符串
     // var lengthOfLongestSubstring = function (s) {
     //   if (!s.trim()) return s.length;
@@ -1113,7 +1113,64 @@
     // console.log('lengthOfLongestSubstring: " "', lengthOfLongestSubstring(" "));
     // console.log('lengthOfLongestSubstring: au', lengthOfLongestSubstring('au'));
     // console.log('lengthOfLongestSubstring:aab ', lengthOfLongestSubstring('aab'));
+  </script> -->
+
+  <script>
+    // 5 最长回文
+    // var longestPalindrome = function (s) {
+    //   if (s.length < 2) return s;
+    //   let max = [];
+    //   let idx = 0;
+    //   let str = [];
+    //   const len = s.length;
+    //   while (idx < len) {
+    //     for (let i = idx; i < len; i++) {
+    //       str.push(s[i]);
+    //       console.log('str:1 ', str);
+    //       if (str.join("") == [...str].reverse().join("")) {
+    //         // console.log('str: ', str);
+    //         if (str.length > max.length) {
+    //           max = [...str]
+    //         }
+    //       }
+    //     }
+    //     str = []
+    //     idx++
+    //   }
+    //   console.log(max)
+    // };
+
+
+    var longestPalindrome = function (s) {
+      if (s.length < 2) return s;
+      let res = "";
+      const len = s.length;
+      for (let i = 0; i < s.length; i++) {
+        parent(i, i);
+        parent(i, i + 1);
+      }
+
+      function parent(m, n) {
+        while (n >= 0 && m < len && s[n] == s[m]) {
+          n--;
+          m++;
+        }
+
+        const result = s.slice(n + 1, m);
+        if (result.length > res.length) {
+          res = result;
+        }
+      }
+      console.log('res: ', res);
+      return res;
+    };
+
+    // longestPalindrome("babad")
+    // longestPalindrome("eabcb")
+    longestPalindrome("eabcb")
   </script>
+
+
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符

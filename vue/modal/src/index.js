@@ -13,6 +13,7 @@ import(/* webpackChunkName:'jquery' */ './c').then(({ querySelect }) => {
   console.log(querySelect('#app'));
 });
 
+
 // const obj = {
 //   a: { m: { n: 1 } },
 //   b: 10,
