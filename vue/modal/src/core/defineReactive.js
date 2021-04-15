@@ -29,7 +29,5 @@ export default function defineReactive(obj, k, value) {
       childOb = observe(newValue);
       dep.notify();
     },
-    configurable: true,
-    enumerable: true
   });
 }

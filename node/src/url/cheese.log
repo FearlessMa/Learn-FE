@@ -1,0 +1,59 @@
+[2021-04-15T15:50:42.628] [DEBUG] cheese - Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: '#mnz',
+  search: '?word=1234&val=abc',
+  query: 'word=1234&val=abc',
+  pathname: '/a/b',
+  path: '/a/b?word=1234&val=abc',
+  href: 'http://www.baidu.com/a/b?word=1234&val=abc#mnz'
+}
+[2021-04-15T15:50:42.629] [DEBUG] cheese - http://www.baidu.com/a/b?word=1234&val=abc#mnz
+[2021-04-15T15:51:24.996] [DEBUG] cheese - Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: '#mnz',
+  search: '?word=1234&val=abc',
+  query: 'word=1234&val=abc',
+  pathname: '/a/b',
+  path: '/a/b?word=1234&val=abc',
+  href: 'http://www.baidu.com/a/b?word=1234&val=abc#mnz'
+}
+[2021-04-15T15:51:24.997] [DEBUG] cheese - http://www.baidu.com/a/b?word=1234&val=abc#mnz
+[2021-04-15T15:53:58.279] [DEBUG] cheese - Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.baidu.com',
+  port: null,
+  hostname: 'www.baidu.com',
+  hash: '#mnz',
+  search: '?word=1234&val=abc',
+  query: 'word=1234&val=abc',
+  pathname: '/a/b',
+  path: '/a/b?word=1234&val=abc',
+  href: 'http://www.baidu.com/a/b?word=1234&val=abc#mnz'
+}
+[2021-04-15T15:53:58.281] [DEBUG] cheese - http://www.baidu.com/a/b?word=1234&val=abc#mnz
+[2021-04-15T15:53:58.281] [DEBUG] cheese - URL {
+  href: 'http://www.baidu.com/a/b?word=1234&val=abc#mnz',
+  origin: 'http://www.baidu.com',
+  protocol: 'http:',
+  username: '',
+  password: '',
+  host: 'www.baidu.com',
+  hostname: 'www.baidu.com',
+  port: '',
+  pathname: '/a/b',
+  search: '?word=1234&val=abc',
+  searchParams: URLSearchParams { 'word' => '1234', 'val' => 'abc' },
+  hash: '#mnz'
+}

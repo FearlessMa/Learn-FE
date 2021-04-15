@@ -20,9 +20,20 @@
   </script> -->
 
   <!-- <script src="../src/array/forEach.js"></script> -->
-  <script>
+  <!-- <script>
     [1, 2, 3].concat([1, 2, 3], 1)
     console.log('    [1,2,3].concat([1,2,3],1): ', [1, 2, 3].concat([1, 2,[23,3], 3], 1));
+  </script> -->
+  <script type="module">
+    import chunks from '../src/array/chunk.js'
+    // import flat from '../src/array/flat.js'
+    // console.log('flat([1,2,3,[4,5,[6,[7]]]]): ', flat([1,2,3,[4,5,[6,[7]]]]));
+    // chunks([1,2,3,4],3)
+    console.log('chunks([1,2,3,4],1): ', chunks([1,2,3,4],1));
+    console.log('chunks([1,2,3,4],2): ', chunks([1,2,3,4],2));
+    console.log('chunks([1,2,3,4],3): ', chunks([1,2,3,4],3));
+    console.log('chunks([1,2,3,4],4): ', chunks([1,2,3,4],4));
+    console.log('chunks([1,2,3,4],5): ', chunks([1,2,3,4],5));
   </script>
 </body>
 
