@@ -1,0 +1,23 @@
+[2021-04-19T17:41:36.333] [DEBUG] cheese - stat Stats {
+  dev: 16777226,
+  mode: 33188,
+  nlink: 1,
+  uid: 501,
+  gid: 20,
+  rdev: 0,
+  blksize: 4096,
+  ino: 18588145,
+  size: 691,
+  blocks: 8,
+  atimeMs: 1618825295052.038,
+  mtimeMs: 1618825293542.6782,
+  ctimeMs: 1618825293542.6782,
+  birthtimeMs: 1618823062168.1165,
+  atime: 2021-04-19T09:41:35.052Z,
+  mtime: 2021-04-19T09:41:33.543Z,
+  ctime: 2021-04-19T09:41:33.543Z,
+  birthtime: 2021-04-19T09:04:22.168Z
+}
+[2021-04-19T17:41:36.335] [DEBUG] cheese - isDir false
+[2021-04-19T17:41:36.335] [DEBUG] cheese - isFile true
+[2021-04-19T17:41:36.336] [DEBUG] cheese - statPrototype Stats { isFile: [Function], _checkModeProperty: [Function] }

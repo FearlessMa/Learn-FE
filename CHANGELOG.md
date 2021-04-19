@@ -1,11 +1,12 @@
-# 1.0.0 (2021-04-15)
+# 1.0.0 (2021-04-19)
 
 
 ### Features
 
+* class 版本promise ([13c3c00](https://github.com/FearlessMa/Learn-FE/commit/13c3c00edfeb8636e61a1b46482e2ac6b62f20ed))
+* node ([51419ff](https://github.com/FearlessMa/Learn-FE/commit/51419ffd55ac3e96027c126af6a95c8eb930fc43))
 * vue3 ([9d144a9](https://github.com/FearlessMa/Learn-FE/commit/9d144a9af224244d34b3979f070001237af36d3b))
 * **webpack配置:** webpack配置 ([f25852e](https://github.com/FearlessMa/Learn-FE/commit/f25852e8a735324116a33898615a88f9e0756aa6))
-* class 版本promise ([13c3c00](https://github.com/FearlessMa/Learn-FE/commit/13c3c00edfeb8636e61a1b46482e2ac6b62f20ed))
 * leetCode ([2a71de4](https://github.com/FearlessMa/Learn-FE/commit/2a71de45a902ebe1c83efe2777dc441828d442b9))
 * leetCode ([90b58f0](https://github.com/FearlessMa/Learn-FE/commit/90b58f0d53a478ed782f63cd619106bca9239f43))
 * leetCode 	104 ([2a3f309](https://github.com/FearlessMa/Learn-FE/commit/2a3f309fcf490ae40d129c2f4b833a6763462da6))

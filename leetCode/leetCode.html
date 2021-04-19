@@ -1170,7 +1170,7 @@
     longestPalindrome("eabcb")
   </script> -->
 
-  <script>
+  <!-- <script>
     // 11 装水最多的容器
     // 数组数据大时 计算超时
     // var maxArea = function (height) {
@@ -1203,8 +1203,55 @@
       }
       return max;
     };
-  </script>
+  </script> -->
 
+  <script>
+    //  15 三数之和
+    var threeSum = function (nums) {
+      let len = nums.length;
+      // [-4, -1, -1, 0, 1, 2]
+      nums = nums.sort((a, b) => a - b);
+      const list = [];
+      for (let i = 0; i < len; i++) {
+        let idx = i;
+        let left = idx + 1;
+        let right = len - 1;
+        let cur = nums[idx];
+        if (cur > 0) return list;
+        if (i > 0 && nums[i] === nums[i - 1]) {
+          continue;
+        }
+        while (left < right) {
+          let lNode = nums[left];
+          let rNode = nums[right];
+          const res = cur + lNode + rNode;
+          if (res < 0) {
+            left++;
+          } else if (res > 0) {
+            right--;
+          } else {
+            list.push([cur, lNode, rNode]);
+            // 去重
+            while (left < right && lNode == nums[left + 1]) {
+              left++;
+            }
+            while (left < right && rNode == nums[right - 1]) {
+              right--;
+            }
+            left++;
+            right--;
+          }
+        }
+      }
+      console.log("list: ", list);
+      return list;
+    };
+
+    // threeSum([-2,0,0,2,2])
+    console.log(' threeSum([-2,0,0,2,2]): ',  threeSum([-2,0,0,2,2]));
+    // console.log('threeSum([-1,0,1,2,-1,-4]): ', threeSum([-1, 0, 1, 2, -1, -4]));
+
+  </script>
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
