@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script src="../src/object/deepClone.js"></script> -->
+  <!-- <script src="../src/object/deepClone1.js"></script> -->
+
+  <script type="module">
+    // import deepClone from '../src/object/deepClone.js'
+    import deepClone from '../src/object/deepClone1.js'
+    const obj = {
+      a: {
+        b: { c: { d: 1 } },
+        e: function add() { },
+        f: /\.js$/,
+        g: Date.now(),
+        h: new Error('err'),
+        i: true,
+        j: 'string',
+        k: undefined,
+        l: null,
+        m: [1, 2, 3]
+      }
+    };
+    const cloneObj = deepClone(obj);
+    console.log('cloneObj: ', cloneObj);
+  </script>
+</body>
+
+</html>
