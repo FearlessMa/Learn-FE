@@ -26,6 +26,7 @@ const dir = {
 // fs.mkdir
 // fs.mkdirSync
 
+// 递归创建文件夹及文件
 function createDir(dir) {
   // path
   const resolvePath = path.resolve(
@@ -63,7 +64,7 @@ function createDir(dir) {
   if (dir.children) {
     dir.children.forEach((child) => {
       // process.chdir() 方法可以变更 Node.js 进程的当前工作目录，如果操作失败（例如，指定的 directory 不存在）则抛出异常。
-      process.chdir(resolvePath);
+      // process.chdir(resolvePath);
       // console.log(process.cwd());
       createDir({
         ...child,
@@ -71,7 +72,8 @@ function createDir(dir) {
       });
     });
   }
-  console.log('resolvePath: ', resolvePath);
 }
 
 createDir(dir);
+
+// 

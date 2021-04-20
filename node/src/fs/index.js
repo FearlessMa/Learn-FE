@@ -35,6 +35,26 @@ logger.debug('statPrototype', statPrototype);
 
 // 删除文件
 // fs.unlinkSync
-fs.unlink('./copy.log',(err)=>{
-  console.log('删除成功')
+// fs.unlink
+// fs.unlink('./copy.log',(err)=>{
+//   console.log('删除成功')
+// })
+
+// node v14以后可用
+// fs.rm
+// fs.rmSync
+
+fs.rm('./copy.log',(err)=>{
+  if(!err){
+    console.log("删除成功")
+  }
 })
+
+// 创建文件夹
+// fs.mkdir
+// fs.mkdirSync
+
+
+// 删除文件夹
+// fs.rmdir
+// fs.rmdirSync
