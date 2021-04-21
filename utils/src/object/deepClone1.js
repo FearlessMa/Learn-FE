@@ -1,4 +1,4 @@
- export default function deepClone(obj, map = new Map()) {
+export default function deepClone(obj) {
   if (typeof obj != 'object' && typeof obj != null) {
     return obj;
   }

@@ -1,9 +1,10 @@
-# 1.0.0 (2021-04-20)
+# 1.0.0 (2021-04-21)
 
 
 ### Features
 
 * class 版本promise ([13c3c00](https://github.com/FearlessMa/Learn-FE/commit/13c3c00edfeb8636e61a1b46482e2ac6b62f20ed))
+* deepClone ([a9bf0f4](https://github.com/FearlessMa/Learn-FE/commit/a9bf0f4372ceecd1583bb445311dc1fa1d8ce8bc))
 * leetCode ([f89f26c](https://github.com/FearlessMa/Learn-FE/commit/f89f26c78c67701ea3f6d9553cd4ab977a046c97))
 * leetCode ([90b58f0](https://github.com/FearlessMa/Learn-FE/commit/90b58f0d53a478ed782f63cd619106bca9239f43))
 * leetCode 	104 ([2a3f309](https://github.com/FearlessMa/Learn-FE/commit/2a3f309fcf490ae40d129c2f4b833a6763462da6))
@@ -13,10 +14,10 @@
 * leetCode 69 二分法 ([a528464](https://github.com/FearlessMa/Learn-FE/commit/a5284645489efba679217888c07782317970f0a6))
 * node ([00f30ae](https://github.com/FearlessMa/Learn-FE/commit/00f30ae5dcf8545daacedcd761a5b9daa4738942))
 * node ([51419ff](https://github.com/FearlessMa/Learn-FE/commit/51419ffd55ac3e96027c126af6a95c8eb930fc43))
-* promise then的回调函数异步执行实现 ([e047d3b](https://github.com/FearlessMa/Learn-FE/commit/e047d3b49ee77a8595685276e8499267c4d8b464))
 * vue3 ([9d144a9](https://github.com/FearlessMa/Learn-FE/commit/9d144a9af224244d34b3979f070001237af36d3b))
 * **webpack配置:** webpack配置 ([f25852e](https://github.com/FearlessMa/Learn-FE/commit/f25852e8a735324116a33898615a88f9e0756aa6))
 * leetCode ([2a71de4](https://github.com/FearlessMa/Learn-FE/commit/2a71de45a902ebe1c83efe2777dc441828d442b9))
+* promise then的回调函数异步执行实现 ([e047d3b](https://github.com/FearlessMa/Learn-FE/commit/e047d3b49ee77a8595685276e8499267c4d8b464))
 * utils 增加array方法 ([c0f8095](https://github.com/FearlessMa/Learn-FE/commit/c0f8095a2d0020d99ab519eb9847d7de3af71f28))
 * webpack 性能优化 ([cc68527](https://github.com/FearlessMa/Learn-FE/commit/cc685276077f9553a18974905e83a9a93015fe71))
 * 增加新内容 ([f9d660e](https://github.com/FearlessMa/Learn-FE/commit/f9d660e89cabd2d4a89de6299e1af24487f72eaf))

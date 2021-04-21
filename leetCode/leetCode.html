@@ -1253,7 +1253,7 @@
 
   </script> -->
 
-  <script>
+  <!-- <script>
     //  16 最接近的三数之和
     var threeSumClosest = function (nums, target) {
       let result = Infinity;
@@ -1288,7 +1288,77 @@
     // threeSumClosest([0,2,1,-3],1)
     console.log('threeSumClosest([0,2,1,-3],1): ', threeSumClosest([0, 2, 1, -3], 1));
     // console.log('threeSumClosest([-1,2,1,-4]): ', threeSumClosest([-1,2,1,-4],2));
+  </script> -->
+
+  <script>
+    // 17 电话号组合
+    // 暴力递归 dfs
+    // var letterCombinations = function (digits) {
+    //   const dList = digits.split("");
+    //   if (dList.length == 0) return [];
+    //   const map = {
+    //     2: "abc",
+    //     3: "def",
+    //     4: "ghi",
+    //     5: "jkl",
+    //     6: "mno",
+    //     7: "pqrs",
+    //     8: "tuv",
+    //     9: "wxyz"
+    //   };
+    //   function getList(list) {
+    //     if (list.length == 0) return [];
+    //     let arr = [];
+    //     let cur = list[0].split("");
+    //     const copyList = list.slice(1)
+    //     for (let i = 0; i < cur.length; i++) {
+    //       const res = getList(copyList)
+    //       if (res.length) {
+    //         res.forEach(item => {
+    //           arr.push(cur[i] + item);
+    //         });
+    //       } else {
+    //         arr.push(cur[i])
+    //       }
+    //     }
+    //     return arr;
+    //   }
+
+    //   let list = dList.map(k => map[k]);
+    //   const res = getList(list)
+    //   console.log('res: ', res);
+    //   return res
+    // };
+    var letterCombinations = function (digits) {
+      const dList = digits.split("");
+      if (dList.length == 0) return [];
+      const map = {
+        2: "abc",
+        3: "def",
+        4: "ghi",
+        5: "jkl",
+        6: "mno",
+        7: "pqrs",
+        8: "tuv",
+        9: "wxyz"
+      };
+      // bfs
+      const queue = [""];
+      for (let j = 0; j < dList.length; j++) {
+        const qLen = queue.length;
+        for (let i = 0; i < qLen; i++) {
+          const cur = queue.shift()
+          for (val of map[dList[j]]) {
+            queue.push(cur + val)
+          }
+        }
+      }
+      console.log('queue: ', queue);
+      return queue
+    };
+    letterCombinations('27')
   </script>
+
 
 
 </body>
