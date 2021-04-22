@@ -1290,7 +1290,7 @@
     // console.log('threeSumClosest([-1,2,1,-4]): ', threeSumClosest([-1,2,1,-4],2));
   </script> -->
 
-  <script>
+  <!-- <script>
     // 17 电话号组合
     // 暴力递归 dfs
     // var letterCombinations = function (digits) {
@@ -1357,9 +1357,59 @@
       return queue
     };
     letterCombinations('27')
+  </script> -->
+
+  <script>
+    // 4数字之和
+    var fourSum = function (nums, target) {
+      nums = nums.sort((a, b) => a - b);
+      //  [-2, -1, 0, 0, 1, 2]
+      console.log('nums: ', nums);
+      const len = nums.length;
+      const result = []
+      for (let i = 0; i < len; i++) {
+        let l1 = i;
+        let l1Node = nums[l1];
+        console.log('result: ', result);
+        if (l1Node > target) return result
+        for (let j = l1 + 1; j < len; j++) {
+          let l2 = j;
+          let l = l2 + 1;
+          let r = len - 1;
+          if (j > 0 && nums[j] === nums[j - 2]) {
+            continue;
+          }
+          while (l < r) {
+            let l2Node = nums[l2];
+            let lNode = nums[l];
+            let rNode = nums[r];
+            let sum = l1Node + l2Node + lNode + rNode;
+            if (sum > target) {
+              r--
+            } else if (sum < target) {
+              l++
+            } else {
+              result.push([l1Node, l2Node, lNode, rNode]);
+              r--
+              l++
+            }
+            while (lNode == nums[l + 1]) {
+              l++
+            }
+            while (rNode == nums[r - 1]) {
+              r--
+            }
+          }
+
+        }
+      }
+      console.log('result: ', result);
+      return result;
+    };
+
+    // fourSum([1, 0, -1, 0, -2, 2], 0)
+    fourSum([2,2,2,2,2], 8)
   </script>
-
-
 
 </body>
 <!-- <script>
