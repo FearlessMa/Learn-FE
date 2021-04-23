@@ -1,4 +1,5 @@
 const { default: observe } = require('./observe');
+const { default: $set } = require('./set');
 const { default: Watcher } = require('./Watcher');
 
 const obj = {
@@ -13,7 +14,8 @@ const obj = {
     // k: undefined,
     // l: null,
     m: [1, 2, 3]
-  }
+  },
+  n:[1,3,5]
 };
 
 observe(obj);
@@ -24,9 +26,16 @@ console.log('obj: ', obj);
 // console.log('res: ', res);
 // console.log('obj: ', obj.a.m);
 
-new Watcher(obj, 'a.b.c.d', (newVal, oldVal) => {
-  console.log('newVal: ', newVal);
-  console.log('oldVal: ', oldVal);
-  console.log('callback');
-});
-console.log(obj.a.b.c.d++);
+// new Watcher(obj, 'a.b.c.d', (newVal, oldVal) => {
+//   console.log('newVal: ', newVal);
+//   console.log('oldVal: ', oldVal);
+//   console.log('callback');
+// });
+// console.log(obj.a.b.c.d++);
+
+// $set(obj, 's', { a: 2 });
+// console.log('obj: ', obj);
+// obj.s.a++;
+
+$set(obj.n,3,[2,3])
+console.log('obj.n: ', obj.n);

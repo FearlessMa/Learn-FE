@@ -14,7 +14,6 @@ const arrayPrototype = Array.prototype;
 
 export const arrayMethods = Object.create(arrayPrototype);
 
-// Array.prototype.reverse
 
 arrayMethods.forEach((method) => {
   const original = arrayPrototype[method];

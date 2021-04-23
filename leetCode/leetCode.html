@@ -1359,7 +1359,7 @@
     letterCombinations('27')
   </script> -->
 
-  <script>
+  <!-- <script>
     // 4数字之和
     var fourSum = function (nums, target) {
       nums = nums.sort((a, b) => a - b);
@@ -1409,8 +1409,46 @@
 
     // fourSum([1, 0, -1, 0, -2, 2], 0)
     fourSum([2,2,2,2,2], 8)
-  </script>
+  </script> -->
 
+  <script>
+    // 19 删除倒数第n个解点
+    var removeNthFromEnd = function (head, n) {
+      // 构造双向链表
+      // let end = null;
+      // let next = head.next;
+      // let pre = head;
+      // while (next) {
+      //   let cur = next;
+      //   cur.pre = pre;
+      //   if (next.next == null) {
+      //     end = next;
+      //   }
+      //   pre = next;
+      //   next = next.next;
+      // }
+
+      // 缓存所有node 到数组
+      let arrayNode = [head];
+      let next = head.next;
+      while (next) {
+        arrayNode.push(next);
+        next = next.next;
+      }
+
+      const len = arrayNode.length;
+      // 删除的前一项
+      let delPreNode = arrayNode[len - n - 1];
+      let delNextNode = arrayNode[len - n + 1];
+      let res = delNextNode ? delNextNode : null;
+      if (!delPreNode) {
+        return res;
+      }
+
+      delPreNode.next = res;
+      return head;
+    };
+  </script>
 </body>
 <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
