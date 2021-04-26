@@ -1,5 +1,5 @@
 import defineReactive from './defineReactive';
-import { def } from './utils';
+import { def, proxyObj } from './utils';
 import { arrayMethods } from './arrayMethods';
 import observe from './observe';
 import Dep from './Dep';
@@ -7,7 +7,8 @@ export default class Observer {
   constructor(value) {
     console.log('Observer');
     this.dep = new Dep();
-    def(value, '__ob__', this, false);
+    // def(value, '__ob__', this, false);
+    this.__ob__ = proxyObj(value);
     if (Array.isArray(value)) {
       Object.setPrototypeOf(value, arrayMethods);
       this.observeArray(value);

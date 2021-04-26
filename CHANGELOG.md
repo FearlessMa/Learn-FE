@@ -1,4 +1,4 @@
-# 1.0.0 (2021-04-23)
+# 1.0.0 (2021-04-26)
 
 
 ### Features
@@ -19,6 +19,7 @@
 * node ([51419ff](https://github.com/FearlessMa/Learn-FE/commit/51419ffd55ac3e96027c126af6a95c8eb930fc43))
 * promise then的回调函数异步执行实现 ([e047d3b](https://github.com/FearlessMa/Learn-FE/commit/e047d3b49ee77a8595685276e8499267c4d8b464))
 * utils 增加array方法 ([c0f8095](https://github.com/FearlessMa/Learn-FE/commit/c0f8095a2d0020d99ab519eb9847d7de3af71f28))
+* vue2 源码 ([fc1851a](https://github.com/FearlessMa/Learn-FE/commit/fc1851a070b9ef1fd727579b3a1e700f0987ffd6))
 * vue3 ([9d144a9](https://github.com/FearlessMa/Learn-FE/commit/9d144a9af224244d34b3979f070001237af36d3b))
 * webpack 性能优化 ([cc68527](https://github.com/FearlessMa/Learn-FE/commit/cc685276077f9553a18974905e83a9a93015fe71))
 * 响应式原理 ([95df13b](https://github.com/FearlessMa/Learn-FE/commit/95df13b8bd022af0f5b050f022358da9ca3f3371))
