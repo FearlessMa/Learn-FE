@@ -1,4 +1,4 @@
-# 1.0.0 (2021-04-27)
+# 1.0.0 (2021-04-30)
 
 
 ### Features
@@ -10,6 +10,7 @@
 * 整合 ([0e265b6](https://github.com/FearlessMa/Learn-FE/commit/0e265b610d80d2c8d503d5d8dcb08441e0559f5b))
 * class 版本promise ([13c3c00](https://github.com/FearlessMa/Learn-FE/commit/13c3c00edfeb8636e61a1b46482e2ac6b62f20ed))
 * deepClone ([a9bf0f4](https://github.com/FearlessMa/Learn-FE/commit/a9bf0f4372ceecd1583bb445311dc1fa1d8ce8bc))
+* leetCode ([629f2f9](https://github.com/FearlessMa/Learn-FE/commit/629f2f9526ffec991ee40966a85b4df72caddde1))
 * leetCode ([f89f26c](https://github.com/FearlessMa/Learn-FE/commit/f89f26c78c67701ea3f6d9553cd4ab977a046c97))
 * leetCode ([2a71de4](https://github.com/FearlessMa/Learn-FE/commit/2a71de45a902ebe1c83efe2777dc441828d442b9))
 * leetCode ([90b58f0](https://github.com/FearlessMa/Learn-FE/commit/90b58f0d53a478ed782f63cd619106bca9239f43))

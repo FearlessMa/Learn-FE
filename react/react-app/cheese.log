@@ -1,0 +1,10 @@
+[2021-04-27T18:16:57.357] [DEBUG] cheese - log {
+  appDirectory: '/Users/mhc/work/learn/learn-fe/react/react-app',
+  publicUrlOrPath: '/',
+  buildPath: 'build'
+}
+[2021-04-27T18:16:58.525] [DEBUG] cheese - log {
+  appDirectory: '/Users/mhc/work/learn/learn-fe/react/react-app',
+  publicUrlOrPath: '/',
+  buildPath: 'build'
+}
