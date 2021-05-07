@@ -1,3 +1,4 @@
+// 深克隆
 export default function deepClone(obj) {
   if (typeof obj != 'object' && typeof obj != null) {
     return obj;
