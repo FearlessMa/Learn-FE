@@ -4,15 +4,15 @@ const path = require('path');
 
 const router = Router();
 
-router.get('/', (req, res, next) => {
-  res.send(req.query);
-  next();
-});
+// router.get('/', (req, res, next) => {
+//   res.send(req.query);
+//   next();
+// });
 
-router.get('/api', (req, res, next) => {
-  res.send(req.query);
-  next();
-});
+// router.get('/api', (req, res, next) => {
+//   res.send(req.query);
+//   next();
+// });
 
 const routesPath = path.resolve(__dirname, 'routes');
 
