@@ -1,4 +1,4 @@
-[2021-05-11T14:41:09.124] [DEBUG] cheese - path <ref *2> {
+[2021-05-11T14:39:15.107] [DEBUG] cheese - path <ref *2> {
   resolve: [Function: resolve],
   normalize: [Function: normalize],
   isAbsolute: [Function: isAbsolute],
@@ -33,20 +33,20 @@
   posix: [Circular *2],
   _makeLong: [Function: toNamespacedPath]
 }
-[2021-05-11T14:41:09.126] [DEBUG] cheese - __dirname /Users/mhc/work/Learn-FE/node/src/path
-[2021-05-11T14:41:09.126] [DEBUG] cheese - resolvePath /Users/mhc/work/Learn-FE/node/src/path/index.js
-[2021-05-11T14:41:09.126] [DEBUG] cheese - joinPath /Users/mhc/work/Learn-FE/node/src/path/index.js
-[2021-05-11T14:41:09.126] [DEBUG] cheese - isAbsolutePath true
-[2021-05-11T14:41:09.127] [DEBUG] cheese - normalize /Users/mhc/work/Learn-FE/node/src/path/index.js
-[2021-05-11T14:41:09.127] [DEBUG] cheese - parsePath {
+[2021-05-11T14:39:15.109] [DEBUG] cheese - __dirname /Users/mhc/work/Learn-FE/node/src/path
+[2021-05-11T14:39:15.109] [DEBUG] cheese - resolvePath /Users/mhc/work/Learn-FE/node/src/path/index.js
+[2021-05-11T14:39:15.110] [DEBUG] cheese - joinPath /Users/mhc/work/Learn-FE/node/src/path/index.js
+[2021-05-11T14:39:15.110] [DEBUG] cheese - isAbsolutePath true
+[2021-05-11T14:39:15.110] [DEBUG] cheese - normalize /Users/mhc/work/Learn-FE/node/src/path/index.js
+[2021-05-11T14:39:15.110] [DEBUG] cheese - parsePath {
   root: '/',
   dir: '/Users/mhc/work/Learn-FE/node/src/path',
   base: 'index.js',
   ext: '.js',
   name: 'index'
 }
-[2021-05-11T14:41:09.127] [DEBUG] cheese - sep /
-[2021-05-11T14:41:09.127] [DEBUG] cheese - basename index.js
-[2021-05-11T14:41:09.127] [DEBUG] cheese - dirname /Users/mhc/work/Learn-FE/node/src/path
-[2021-05-11T14:41:09.127] [DEBUG] cheese - extname .js
-[2021-05-11T14:41:09.128] [DEBUG] cheese - relativePath ../../util/logger.js
+[2021-05-11T14:39:15.110] [DEBUG] cheese - sep /
+[2021-05-11T14:39:15.110] [DEBUG] cheese - basename index.js
+[2021-05-11T14:39:15.110] [DEBUG] cheese - dirname /Users/mhc/work/Learn-FE/node/src/path
+[2021-05-11T14:39:15.110] [DEBUG] cheese - extname .js
+[2021-05-11T14:39:15.111] [DEBUG] cheese - relativePath ../../util/logger.js
