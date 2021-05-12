@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      // | 相同位有一个为1 就为1
+      // & 相同位都为1 就为1
+      // ^ 相同位两个值相反，就为1
+    </script>
 
-<body>
-  <script>
-    // | 相同位有一个为1 就为1
-    // & 相同位都为1 就为1
-    // ^ 相同位两个值相反，就为1
-  </script>
-
-  <!-- <script>
+    <!-- <script>
     // twoSum
     var twoSum = function (nums, target) {
       const len = nums.length;
@@ -41,7 +40,7 @@
     let res = twoSum([3, 3], 6)
     console.log('res: ', res);
   </script> -->
-  <!-- <script>
+    <!-- <script>
     // 7 整数翻转
     // var reverse = function (x) {
     //   const max = Math.pow(2, 31) - 1;
@@ -79,7 +78,7 @@
     console.log('reverse(1534236469): ', reverse(1534236469));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 回文数字
     // var isPalindrome = function (x) {
     //   // 0
@@ -122,7 +121,7 @@
     console.log('isPalindrome(9): ', isPalindrome(9));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 14 最长公共前缀
     var longestCommonPrefix = function (strs) {
       if (!strs || !strs.length) {
@@ -163,7 +162,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 有效的括号 栈
     // var isValid = function (s) {
     //   if (s.length < 2) return false;
@@ -205,7 +204,7 @@
     console.log('isValid("()[]{}"): ', isValid("()[]{}"));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 合并两个有序链表
     var mergeTwoLists = function (l1, l2) {
       if (l1 == null) return l2;
@@ -222,7 +221,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 删除数组中重复项
     // var removeDuplicates = function (nums) {
     //   if (nums.length < 2) return nums.length;
@@ -257,7 +256,7 @@
 
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 动态规划 322 最少零钱问题
     // var coinChange = function (coins, amount) {
     //   if (amount <= 0) return 0;
@@ -333,7 +332,7 @@
     // console.log(' coinChange([1,2,5],6): ', coinChange([1, 2, 5], 6));
     console.log(' coinChange([1,2,5],10): ', coinChange([1, 2, 5], 10));
   </script> -->
-  <!-- <script>
+    <!-- <script>
     //  70 爬楼梯 方式 : 动态规划
     var climbStairs = function (n) {
       const dp = [];
@@ -347,7 +346,7 @@
     // console.log('climbStairs(3): ', climbStairs(4));
     console.log('climbStairs(3): ', climbStairs(5));
   </script> -->
-  <!-- <script>
+    <!-- <script>
     //  120 三角形最短路径 动态规划
     var minimumTotal = function (triangle) {
       let startIdx = 0;
@@ -387,7 +386,7 @@
     console.log(' minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]])): ', minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  64 最小路径 动态规划
     //  暴力递归解决 自顶而下
     //  动态规划思路   自底而上 寻找规律 缓存结果 
@@ -421,7 +420,7 @@
     console.log('minPathSum([[1,3,1],[1,5,1],[4,2,1]]): ', minPathSum([[1, 3, 1], [1, 5, 1], [4, 2, 1]]));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 343 整数拆分 
     // 1. dp[i] = (i-j)*dp[j]
     // 2. dp[i] = Math.max(1*dp[i-1],2*dp[i-2],3*dp[i-3])
@@ -451,7 +450,7 @@
     console.log('integerBreak(10): ', integerBreak(10));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  279 完全平方数 动态规划
     // 此方法超时
     var numSquares = function (n) {
@@ -495,7 +494,7 @@
     console.log('numSquares(8609): ', numSquares(8609));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  62 不同路径 ，动态规划
     //  暴力递归解决 自顶而下
     //  动态规划思路   自底而上 寻找规律 缓存结果 
@@ -553,7 +552,7 @@
     console.log('uniquePaths(2,1): ', uniquePaths(2, 1));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  27 移除元素
     var removeElement = function (nums, val) {
       let idx = 0;
@@ -579,7 +578,7 @@
     removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 28 
     var strStr = function (haystack, needle) {
       if (haystack == needle) return 0;
@@ -609,8 +608,7 @@
     console.log('strStr("mississippi","issip"): ', strStr("mississippi","issip"));
   </script> -->
 
-
-  <!-- <script>
+    <!-- <script>
     //  35 搜索位置插入
     // var searchInsert = function (nums, target) {
     //   // 边界条件 小于第一个 或大于最后一个
@@ -642,7 +640,7 @@
 
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  53 最大子序列和
 
     // 内存爆炸版
@@ -759,7 +757,7 @@
     console.log('maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]): ', maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  58 最后一个单词长度
 
     // api 解法
@@ -781,7 +779,7 @@
 
 
   </script> -->
-  <!-- <script>
+    <!-- <script>
     //  66 加一
     var plusOne = function (digits) {
       let arr = [];
@@ -807,7 +805,7 @@
     console.log('plusOne([9]): ', plusOne([9]));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 67 二进制求和
     var addBinary = function (a, b) {
       let lenA = a.length - 1;
@@ -871,7 +869,7 @@
     // console.log('addBinary("1","0"): ', addBinary("1", "0"));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  69 平方根
     var mySqrt = function (x) {
       if (x < 2) return x;
@@ -905,7 +903,7 @@
     console.log('mySqrt(11): ', mySqrt(11));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  83 删除链表重复项
     // @lc code=start
     /**
@@ -936,7 +934,7 @@
     console.log('deleteDuplicates(node1): ', deleteDuplicates(node1));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 88 合并有序数组
 
     var merge = function (nums1, m, nums2, n) {
@@ -953,8 +951,7 @@
     // console.log('merge: ', merge([4, 0, 0, 0, 0, 0], 1, [1, 2, 3, 5, 6], 5));
   </script> -->
 
-
-  <!-- <script>
+    <!-- <script>
     //  100 相同的tree
     // 递归解题
     // var isSameTree = function (p, q) {
@@ -991,7 +988,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 104 相同tree
     // 递归
     // var maxDepth = function (root) {
@@ -1022,7 +1019,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  2 链表相加
     //  链表相加 递归
     // var addTwoNumbers = function (l1, l2) {
@@ -1071,7 +1068,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  3. 最长无重复子字符串
     // var lengthOfLongestSubstring = function (s) {
     //   if (!s.trim()) return s.length;
@@ -1115,7 +1112,7 @@
     // console.log('lengthOfLongestSubstring:aab ', lengthOfLongestSubstring('aab'));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 5 最长回文
     // var longestPalindrome = function (s) {
     //   if (s.length < 2) return s;
@@ -1170,7 +1167,7 @@
     longestPalindrome("eabcb")
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 11 装水最多的容器
     // 数组数据大时 计算超时
     // var maxArea = function (height) {
@@ -1205,7 +1202,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  15 三数之和
     var threeSum = function (nums) {
       let len = nums.length;
@@ -1253,7 +1250,7 @@
 
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  16 最接近的三数之和
     var threeSumClosest = function (nums, target) {
       let result = Infinity;
@@ -1290,7 +1287,7 @@
     // console.log('threeSumClosest([-1,2,1,-4]): ', threeSumClosest([-1,2,1,-4],2));
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 17 电话号组合
     // 暴力递归 dfs
     // var letterCombinations = function (digits) {
@@ -1359,7 +1356,7 @@
     letterCombinations('27')
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 4数字之和
     var fourSum = function (nums, target) {
       nums = nums.sort((a, b) => a - b);
@@ -1411,7 +1408,7 @@
     fourSum([2,2,2,2,2], 8)
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 19 删除倒数第n个解点
     var removeNthFromEnd = function (head, n) {
       // 构造双向链表
@@ -1450,7 +1447,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     // 22 生成括号
     var generateParenthesis = function (n) {
       const res = [];
@@ -1478,7 +1475,7 @@
     };
   </script> -->
 
-  <!-- <script>
+    <!-- <script>
     //  bs 二分查找
     function bs(arr, target) {
       let l = 0;
@@ -1504,7 +1501,7 @@
     console.log('r: ', r);
   </script> -->
 
-  <script>
+    <!-- <script>
     // 34 
     var searchRange = function (nums, target) {
       const res = [-1, -1];
@@ -1527,10 +1524,62 @@
     let nums = [5, 7, 7, 8, 8, 10], target = 8;
     const res = searchRange(nums, target)
     console.log('res: ', res);
-  </script>
+  </script> -->
 
-</body>
-<!-- <script>
+    <!-- <script>
+      //  39 组合综合  回溯
+      var combinationSum = function (candidates, target) {
+        const ans = [];
+        const dfs = (target, combine, idx) => {
+          if (idx === candidates.length) {
+            return;
+          }
+          if (target === 0) {
+            ans.push(combine);
+            return;
+          }
+          // 直接跳过
+          dfs(target, combine, idx + 1);
+          // 选择当前数
+          if (target - candidates[idx] >= 0) {
+            dfs(target - candidates[idx], [...combine, candidates[idx]], idx);
+          }
+        };
+
+        dfs(target, [], 0);
+        return ans;
+      };
+    </script> -->
+
+    <script>
+      //  40
+      var combinationSum2 = function (candidates, target) {
+        candidates = candidates.sort((a, b) => a - b);
+        const ans = [];
+        function dfs(target, c, idx) {
+          if (target === 0) {
+            ans.push(c);
+            return;
+          }
+          if (idx === candidates.length) return;
+
+          dfs(target, c, idx + 1);
+          if (target - candidates[idx] >= 0) {
+            dfs(target - candidates[idx], [...c, candidates[idx]], idx + 1);
+          }
+        }
+        dfs(target, [], 0);
+        // 去重
+        const res = {};
+        ans.forEach((item) => {
+          const k = item.join('');
+          res[k] = item;
+        });
+        return Object.values(res);
+      };
+    </script>
+  </body>
+  <!-- <script>
   //  aaabbcccdddddaaaaaddddeeeecccccc 找出连续重复最多的字符
   function repeatMax(str) {
     const len = str.length;
@@ -1554,7 +1603,7 @@
   const str1 = 'aaabbcccdddddaaaaaddddeeeeccccccc'
   console.log('repeatMax(str1): ', repeatMax(str1));
 </script> -->
-<!-- <script>
+  <!-- <script>
   // 1[2[1[a][3[bc]]]] 转化 abcbcbcabcbcbc
   // 规则  重复1次(重复2次 (a 拼接( 重复3次bc )))
   function parseTemplate(templateStr) {
@@ -1596,5 +1645,4 @@
   console.log('parseTemplate("1[2[1[a][3[6bc]]]]"): ', parseTemplate("1[2[1[a][3[6bc]]]]"));
 
 </script> -->
-
 </html>
