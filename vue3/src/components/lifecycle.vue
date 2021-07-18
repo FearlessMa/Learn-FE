@@ -1,5 +1,5 @@
 <template>
-  <div>lifecycle</div>
+  <div class="test">lifecycle</div>
   <div>{{ num }}</div>
   <button @click="num++">change</button>
 </template>
@@ -63,4 +63,7 @@ export default defineComponent({
   }
 });
 </script>
-<style scoped></style>
+<style scoped>
+.test {
+}
+</style>

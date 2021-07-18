@@ -1,4 +1,4 @@
-# 1.0.0 (2021-05-12)
+# 1.0.0 (2021-07-18)
 
 
 ### Features
@@ -20,6 +20,7 @@
 * leetCode 19 ([0e4310b](https://github.com/FearlessMa/Learn-FE/commit/0e4310be5142726bae66aad8051f11ff6545aaad))
 * leetCode 34 ([9de969e](https://github.com/FearlessMa/Learn-FE/commit/9de969ea11aca6cb3d0f37633bc17a2b6ffaa82a))
 * leetCode 35 搜索位置插入 ([b1456c9](https://github.com/FearlessMa/Learn-FE/commit/b1456c959c066795f261bda7f80830046db9ae7b))
+* leetCode 40 ([663af06](https://github.com/FearlessMa/Learn-FE/commit/663af06a877040faa4893316c36941072b241810))
 * leetCode 53 最大递增子序列 动态规划 ([b292400](https://github.com/FearlessMa/Learn-FE/commit/b292400a7cd08f25dc367620d36222b2d7d6995e))
 * leetCode 58 67 66 ([2f699c3](https://github.com/FearlessMa/Learn-FE/commit/2f699c3ae1286e88ddf1993a24eaa3bf89f44315))
 * leetCode 69 二分法 ([a528464](https://github.com/FearlessMa/Learn-FE/commit/a5284645489efba679217888c07782317970f0a6))

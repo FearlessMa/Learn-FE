@@ -1,5 +1,5 @@
 // import Promise from "./promise";
-import Promise from './PromiseClass';
+// import Promise from './PromiseClass';
 
 const p = new Promise((resolve, reject) => {
   setTimeout(() => {
